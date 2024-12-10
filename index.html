@@ -1,22 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Home</title>
+    <title>Quality Coffee</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <script type="module" src="script.js"></script>
   </head>
+
   <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
+    <header>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="html/products.html">Products</a></li>
+          <li><a href="html/about.html">About</a></li>
+
+          <li class="logo">
+            <a href="#"><img src="img/coffee-beans.png" alt="coffee beans"></a>
+          </li>
+
+          <li><a href="html/faq.html">FAQ</a></li>
+          <li><a href="html/contact.html">Contact</a>
+        </ul>
+      </nav>
+      <!-- Legg til bildet i css -->
+      <section class="hero">
+        <h1>Bringing you knowledge and quality from bean to cup</h1>
+      </section>
+    </header>
     <main>
+      <section class="container">
+        <div class="color-block"></div>
+        <section class="section">
+          <article class="element">
+            <figure>
+              <img src="img/beans.jpg" alt="coffee beans">
+              <figcaption>All our coffee beans are handpicked</figcaption>
+            </figure>
+            <div class="color-box">
+              <h3>Handpicked beans</h3>
+              <p>Just like berries, picking overripe or underripe coffee beans will greatly affect quality and taste. Therefore, we only pick the ripe coffee beans, to ensure the best flavor for you.</p>
+            </div>
+          </article>
+          <article class="element">
+            <figure>
+              <img src="img/brew.jpg" alt="coffee brew">
+              <figcaption>Handbrewing</figcaption>
+            </figure>
+            <div class="color-box">
+              <h3>Perfect brewing</h3>
+              <p>How you brew your coffee also matters in order to get the best result. A hand brewer is a cheap investment that you will be very happy that you made.</p>
+            </div>
+          </article>
+        </section>
+      </section>
     </main>
   </body>
+
 </html>
