@@ -1,3 +1,31 @@
+:root {
+  --primary-color: #2F2B2B;
+  --secondary-color: #ABC2CB;
+  --accent-color: #A062E4; 
+  --background-color: #FFF8EA;
+  --header-font: Merriweather;
+  --p-font: OpenSans-SemiBold; 
+}
+
+@font-face {
+  font-family: Merriweather;
+  src: url(../fonts/MerriweatherSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: OpenSans-SemiBold;
+  src: url(../fonts/OpenSans-SemiBold.ttf);
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Grunnleggende styling for headeren */
 header { 
   position: relative;
   width: 100%;
@@ -14,57 +42,71 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  padding: 16 64px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 16 64px; /* Padding på venstre og høyre kant */
+  width: 100%;
 }
 
-.nav-links {
+.nav-container {
+  display: flex;
+  justify-content: center; /* Plasserer venstre og høyre lenker på hver side */
+  align-items: center;
+  width: 100%;
+  gap: 40px;
+  padding: 30px;
+}
+
+.left-links, .right-links {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.nav-links li {
-  margin: 0 16px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #A062E4;
-  font-size: 20px;
-}
-
-.logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.left-links ul, .right-links ul {
   display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.left-links li, .right-links li {
+  margin: 0 30px; /* Plass mellom lenkene */
+  list-style: none;
+}
+
+.left-links a, .right-links a {
+  text-decoration: none;
+  color: var(--accent-color);
+  font-size: 20px;
+  font-family: var(--p-font);
+}
+
+/* Logo i midten */
+.logo {
+  display: flex;
+  justify-content: center; /* Sentrerer logoen horisontalt */
   align-items: center;
 }
 
 .logo img {
   width: 50px;
   height: auto;
+  padding-top: 10px;
 }
 
 .hero {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: calc(100vh - 64px);
-  color: #2F2B2B;
-  text-align: center;
-  padding: 0 64px;
+  justify-content: flex-end;
+  height: calc(100vh - 64px); /* Tar opp resterende plass etter navigasjonen */
+  color: var(--primary-color);
 }
 
 .hero h1 {
   font-size: 48px;
+  font-family: var(--header-font);
   line-height: 1.2;
-  max-width: 800px;
-  margin: 0 auto;
+  width: 500px;
+  margin-right: 100px;
 }
 
 .container { 
@@ -72,41 +114,85 @@ display: grid;
 grid-template-columns: repeat(12, 1fr);
 gap: 32px;
 padding: 64px;
-background-color: #FFF8EA;
+background-color: var(--background-color);
+position: relative;
 }
 
-.color-block { 
-  grid-column: span 4;
-  background-color: #2F2B2B;
+/* Color-block bakgrunn */
+.color-block {
+  grid-column: 1 / span 4;
+  background-color: var(--primary-color);
   height: 1322px;
+  width: 512px;
+  position: absolute;
+  top: 0;
+  left: 64px; /* Juster for padding */
+  border-radius: 5px;
+  z-index: 0;
+}
+
+/* Seksjonen som inneholder elementene */
+.section {
+  grid-column: 1 / span 12;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 32px;
   position: relative;
-  }
+  z-index: 1;
+} 
 
-  .section { 
-   grid-column: span 12;
-   display: grid;
-   grid-template-columns: repeat(4, 1fr);
-   gap: 32px;
-  }  
+ /* Styling for hvert element */
+.element {
+  display: contents; /* Brukes for å kontrollere plassering av barn i grid */
+} 
 
-  .element { 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-   }  
+/* Styling for bildene */
+.image-box {
+  grid-column: 2 / 4;
+  margin-top: 100px; /* Plasser 100px under toppen av forrige element */
+}
 
-   .element img { 
-    width: 512px;
-    height: 512px;
-   }  
+.image-box img {
+  width: 512px;
+  height: 512px;
+  border-radius: 5px;
+}
 
-   .color-box { 
-    background-color: #ABC2CB;
-    padding: 20px;
-    position: relative;
-    z-index: 1;
-   }  
+/* Styling for tekstboksen */
+.color-box {
+  grid-column: 4 / 9;
+  width: 784px;
+  height: 512px;
+  background-color: var(--secondary-color);
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-   .content { 
-    z-index: 2;
-   }     
+/* Tekst inni color-box */
+.color-box h3,
+.color-box p {
+  margin: 0;
+  text-align: left;
+}
+
+/* Spesifikk avstand mellom første og andre element */
+.section .element:nth-of-type(2) .image-box {
+  margin-top: 100px; /* Legger avstand mellom første og andre bilde */
+}
+
+   h3 {
+    font-size: 32px;
+    font-family: var(--header-font);
+    color: var(--primary-color);
+   }
+
+   p {
+    font-size: 16px;
+    font-family: var(--p-font);
+    color: var(--primary-color);
+   }

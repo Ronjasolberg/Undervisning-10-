@@ -11,31 +11,43 @@
   <body>
     <header>
       <nav>
-        <ul class="nav-links">
-          <li><a href="html/products.html">Products</a></li>
-          <li><a href="html/about.html">About</a></li>
+        <div class="nav-container">
+          <!--Venstre lenker-->
+          <div class="left-links">
+            <ul>
+              <li><a href="html/products.html">Products</a></li>
+              <li><a href="html/about.html">About</a></li>
+            </ul>
+          </div>
 
-          <li class="logo">
-            <a href="#"><img src="img/coffee-beans.png" alt="coffee beans"></a>
-          </li>
+          <!--Logo i midten-->
+            <div class="logo">
+              <a href="#"><img src="img/coffee-beans.png" alt="coffee beans"></a>
+            </div>
 
-          <li><a href="html/faq.html">FAQ</a></li>
-          <li><a href="html/contact.html">Contact</a>
-        </ul>
+          <!--Høyre lenker-->
+          <div class="right-links">
+            <ul>
+              <li><a href="html/faq.html">FAQ</a></li>
+              <li><a href="html/contact.html">Contact</a>
+            </ul>
+          </div>
+        </div>
       </nav>
       <!-- Legg til bildet i css -->
       <section class="hero">
         <h1>Bringing you knowledge and quality from bean to cup</h1>
       </section>
+      <div class="logo">
+      <a href="container"><img src="img/down-arrow.png"></a>
     </header>
     <main>
       <section class="container">
         <div class="color-block"></div>
         <section class="section">
           <article class="element">
-            <figure>
+            <figure class="image-box">
               <img src="img/beans.jpg" alt="coffee beans">
-              <figcaption>All our coffee beans are handpicked</figcaption>
             </figure>
             <div class="color-box">
               <h3>Handpicked beans</h3>
@@ -43,9 +55,8 @@
             </div>
           </article>
           <article class="element">
-            <figure>
+            <figure class="image-box">
               <img src="img/brew.jpg" alt="coffee brew">
-              <figcaption>Handbrewing</figcaption>
             </figure>
             <div class="color-box">
               <h3>Perfect brewing</h3>
