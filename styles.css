@@ -118,11 +118,11 @@ a:active {
 }
 
 .hero h1 {
-  font-size: 48px;
+  font-size: 40px;
   font-family: var(--header-font);
   line-height: 1.2;
-  width: 500px;
-  margin-right: 100px;
+  width: 400px;
+  margin-right: 150px;
 }
 
 .container { 
@@ -188,6 +188,13 @@ position: relative;
   flex-direction: column;
   justify-content: center;
   margin-top: 100px;
+  transition: 3s ease;
+}
+
+.color-box:hover {
+  width: fit-content;
+  height: fit-content;
+  background-color: var(--accent-color);
 }
 
 /* Tekst inni color-box */
